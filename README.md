@@ -6,11 +6,8 @@
 *Trana (Sanskrit: तrana) — meaning Protection, Rescue, or Refuge*
 
 [![Stage](https://img.shields.io/badge/Stage-Project%20Proposal-yellow?style=for-the-badge)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
 [![Type](https://img.shields.io/badge/Type-EPICS%20Project-purple?style=for-the-badge)]()
 [![Target](https://img.shields.io/badge/Target-India-orange?style=for-the-badge)]()
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa?style=for-the-badge)](CODE_OF_CONDUCT.md)
 
 > **This is a detailed project proposal for Trana — a centralized, on-demand emergency mobility platform proposed to address India's fragmented medical response infrastructure.**
 
@@ -33,8 +30,6 @@
 - [Implementation Roadmap](#-implementation-roadmap)
 - [Risk Analysis & Mitigation](#-risk-analysis--mitigation)
 - [Expected Outcomes & Impact](#-expected-outcomes--impact)
-- [Contributing](#-contributing)
-- [License](#-license)
 - [Conclusion](#-conclusion)
 
 ---
@@ -249,36 +244,6 @@ If the proposal is executed successfully, the following measurable outcomes are 
 
 ---
 
-## 🤝 Contributing
-
-Trana is an open-source EPICS project and **all contributions are welcome!** Whether you're a developer, designer, medical professional, or just someone who cares about emergency response, there's a place for you here.
-
-### Quick Start
-
-1. Browse [open issues](../../issues) — especially those tagged [`good first issue`](../../issues?q=label%3A%22good+first+issue%22)
-2. Read the [**CONTRIBUTING.md**](CONTRIBUTING.md) guide for full setup instructions
-3. Review our [**Code of Conduct**](CODE_OF_CONDUCT.md)
-4. Fork the repo, create a branch, and open a Pull Request!
-
-### Ways to Help Right Now (Pre-Development Phase)
-
-| Area | What's Needed |
-|------|---------------|
-| 🎨 **UI/UX Design** | Wireframes for the patient app, driver app, and hospital dashboard |
-| 📋 **Research** | Case studies on existing ambulance dispatch platforms (CAD systems) |
-| 🏥 **Domain Expertise** | Input from paramedics, ER staff, or fleet operators on real-world pain points |
-| 📖 **Documentation** | Improving and expanding any part of this repository |
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
-This means you are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, provided the copyright notice is included.
-
----
-
 ## 🏁 Conclusion
 
 Trana directly targets **three quantifiable failure points** in India's emergency response system:
@@ -298,7 +263,5 @@ The **pilot-first strategy** proposed here keeps initial investment and risk low
 *This is a project proposal document. Trana is currently in the pre-development / proposal stage.*
 
 **EPICS Project — Engineering Projects in Community Service**
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa?style=flat-square)](CODE_OF_CONDUCT.md)
 
 </div>
