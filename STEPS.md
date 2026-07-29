@@ -68,19 +68,19 @@
 
 > These decisions are finalized based on the Trana Project Proposal.
 
-- [x] **Mobile framework:** Flutter (cross-platform — Android + iOS from one codebase)
-- [x] **Backend:** Node.js + Express (REST + WebSocket APIs)
-- [x] **Database:** PostgreSQL (structured data) + Redis (live location caching)
-- [x] **Maps API:** Google Maps Platform (Maps SDK, Directions API, Distance Matrix API, Geocoding API)
-- [x] **Notifications:** Firebase Cloud Messaging (FCM) for push + Twilio for SMS fallback
-- [x] **Cloud Hosting:** Railway / Render (backend + DB) + Vercel (hospital dashboard)
-- [ ] Document final decisions in a `TECH_STACK.md` file in the repo
+- [x] **Mobile framework:** Kotlin (Native Android for Patient App & Driver/Paramedic App)
+- [x] **Desktop application:** Python + HTML/CSS/JS UI (Hospital Command Dashboard & Admin)
+- [x] **Database & Real-time Backend:** Firebase Database (Realtime Database / Cloud Firestore + Firebase Auth)
+- [x] **Maps API:** Google Maps Platform (Android Maps SDK in Kotlin + JS Maps API in Python HTML UI)
+- [x] **Notifications:** Firebase Cloud Messaging (FCM) for push + SMS fallback
+- [x] **Cloud Hosting:** Firebase Cloud Services (Serverless realtime database, rules, and authentication)
+- [x] Document final decisions in `implementation.md` and `README.md`
 
 ### 0.4 Set Up Development Environment
-- [ ] All team members install: Git, VS Code, Flutter SDK, Node.js (v18+)
-- [ ] Set up shared `.env.example` file listing all required environment variables
-- [ ] Create a shared API key management document (Notion / private Google Doc — **never commit keys to GitHub**)
-- [ ] Add a `.gitignore` file covering all platforms (Flutter, Node, environment files)
+- [x] All team members install: Git, VS Code / PyCharm, Android Studio, Python 3.10+, Kotlin SDK
+- [x] Set up shared `firebase/` schema and config rules
+- [x] Create a shared API key management document (Notion / private Google Doc — **never commit keys to GitHub**)
+- [x] Add a `.gitignore` file covering all platforms (Python, Kotlin/Android, Firebase, environment files)
 
 ---
 
@@ -151,16 +151,17 @@
 
 ---
 
-## Phase 2 — Backend Foundation
+## Phase 2 — Database & Real-time Foundation (Firebase)
 
-> Build the API server that all three apps will communicate with.
+> Configure the Firebase Realtime Database and Cloud Firestore that all three apps will communicate with.
 
-### 2.1 Initialize the Backend Project
-- [ ] Create folder: `trana-backend/`
-- [ ] `npm init -y` → install Express, dotenv, cors, helmet, morgan
-- [ ] Set up folder structure: `/routes`, `/controllers`, `/models`, `/middleware`, `/services`, `/utils`, `/config`
-- [ ] Implement health-check endpoint: `GET /api/health` → `{ status: "ok", timestamp: "..." }`
-- [ ] Verify health-check works locally with Postman
+### 2.1 Initialize Firebase Project Structure
+- [x] Create folder: `firebase/`
+- [x] Configure security & indexing rules in `firebase/database.rules.json`
+- [x] Define real-time data tree schema in `firebase/schema.json` (`/users`, `/ambulances`, `/dispatches`, `/hospitals`, `/checklists`)
+- [ ] Create a project in the Firebase Console and import `schema.json` as starter test data
+- [ ] Download `google-services.json` and place it in Kotlin Android app directories
+
 
 ### 2.2 Define All API Routes (On Paper First!)
 
@@ -260,11 +261,18 @@
 
 ## Phase 5 — Patient App Development
 
+> ⚠️ **Tech Stack Note:** Steps 5.1 and 6.1 below were written with Flutter in mind, but the confirmed
+> tech stack (see `implementation.md` and the project proposal) is **Kotlin + Jetpack Compose** for both
+> mobile apps. When executing Phase 5, follow the Kotlin MVVM structure in `trana-patient-app/`
+> instead of the Flutter setup commands listed here. Replace Flutter-specific packages with their
+> Kotlin/Android equivalents (e.g., `maps-compose`, `play-services-location`, `firebase-auth`).
+
 ### 5.1 Project Setup
-- [ ] Initialize Flutter project: `flutter create trana_patient`
-- [ ] Set up folder structure: `/screens`, `/widgets`, `/services`, `/models`, `/providers`, `/utils`
-- [ ] Add dependencies: `http`, `riverpod`, `google_maps_flutter`, `geolocator`, `firebase_messaging`, `flutter_secure_storage`, `sentry_flutter`
-- [ ] Set up app theme, colors, and fonts from the Figma design system
+- [x] Project structure already initialized in `trana-patient-app/` with Kotlin + Jetpack Compose
+- [ ] Ensure all team members can open and sync `trana-patient-app/` in Android Studio
+- [ ] Add `google-services.json` (from Firebase Console) to `trana-patient-app/app/`
+- [ ] Add `MAPS_API_KEY` to `local.properties`
+- [ ] Verify Gradle sync succeeds and the project builds without errors
 
 ### 5.2 Splash, Onboarding & Login Screens
 - [ ] **Splash Screen:** Logo → redirect based on login state
@@ -307,11 +315,16 @@
 
 ## Phase 6 — Driver / Paramedic App Development
 
+> ⚠️ **Tech Stack Note:** Step 6.1 below references Flutter. The confirmed tech stack is
+> **Kotlin + Jetpack Compose + Android Foreground Service** (not Flutter). Follow the
+> planned module structure in `trana-driver-app/README.md` instead.
+
 > Must work well with gloves, outdoors, while stressed. Large targets, dark mode.
 
 ### 6.1 Project Setup
-- [ ] Initialize Flutter project: `flutter create trana_driver`
-- [ ] Same dependencies + `flutter_background_service` (for background GPS)
+- [ ] Initialize Android project in `trana-driver-app/` with Kotlin + Jetpack Compose
+- [ ] Add `google-services.json` (package: `com.trana.driver`) to `trana-driver-app/app/`
+- [ ] Add `MAPS_API_KEY` to `local.properties`
 - [ ] **Dark mode UI**, large text, oversized tap targets (minimum 56 dp throughout)
 
 ### 6.2 Login, Verification & Status Toggle

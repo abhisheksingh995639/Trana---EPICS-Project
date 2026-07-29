@@ -1,0 +1,8 @@
+# Python dependencies for Trana Desktop App
+# Install with: pip install -r requirements.txt
+
+# TODO: Add required packages here when implementation begins.
+# Expected dependencies:
+#   firebase-admin    — Firebase Realtime Database & Auth (Admin SDK)
+#   pywebview         — Render HTML/CSS/JS UI inside a native desktop window
+#   flask             — Optional local dev server for the HTML UI

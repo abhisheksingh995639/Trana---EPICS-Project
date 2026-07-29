@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Emergency Colors -->
+    <color name="emergency_red">#D32F2F</color>
+    <color name="emergency_red_dark">#B71C1C</color>
+    <color name="emergency_red_light">#EF9A9A</color>
+
+    <!-- Background Colors (Dark Theme) -->
+    <color name="bg_primary">#0D0E12</color>
+    <color name="bg_surface">#16181F</color>
+    <color name="bg_card">#1E202B</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9499B0</color>
+
+    <!-- Status Colors -->
+    <color name="status_success">#00E676</color>
+    <color name="status_warning">#FFEA00</color>
+    <color name="status_error">#FF5252</color>
+
+    <!-- System UI -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
