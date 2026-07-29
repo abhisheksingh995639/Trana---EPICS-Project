@@ -151,13 +151,13 @@ The proposed Trana platform would consist of three interconnected interfaces:
 
 | Layer | Proposed Technology / Approach |
 |-------|-------------------------------|
-| 📱 **Mobile Apps** | **Kotlin** (Native Android) for both the Patient SOS App and Driver / Paramedic App |
-| 🖥️ **Desktop Dashboard** | **Python + HTML/CSS/JS UI** (PyQtWebEngine / Webview / local server) for Hospital Command & Admin |
-| 🗄️ **Database & Backend** | **Firebase Database** (Realtime Database / Cloud Firestore) for live geolocation streaming, structured records, and authentication |
-| 🗺️ **Geolocation & Routing** | **Google Maps Platform** (Android Maps SDK in Kotlin + JS Maps in Python HTML UI) for live routing and ETA calculation |
-| 🔔 **Notifications** | **Firebase Cloud Messaging (FCM)** for push alerts and SMS gateway fallback |
-| ☁️ **Cloud Infrastructure** | **Firebase Cloud Services** for serverless scaling, authentication, and security rules |
-
+| 📱 **Mobile Apps** | Cross-platform framework (Flutter / React Native) to ship patient and driver apps on both Android and iOS |
+| 🖥️ **Dashboard** | Web-based hospital dashboard built with a modern JS framework, accessible from desktop and tablet |
+| ⚙️ **Backend / API** | REST / WebSocket services for dispatch logic, live location updates, and notifications |
+| 🗺️ **Geolocation & Routing** | Third-party maps/traffic API (e.g., Google Maps Platform) for live routing and ETA calculation |
+| 🗄️ **Database** | Relational database for structured records (users, fleets, hospitals) + a real-time store for live location streams |
+| 🔔 **Notifications** | Push notification and SMS gateway for SOS alerts and status updates |
+| ☁️ **Hosting** | Cloud infrastructure (AWS / GCP / Azure) for scalable, region-based deployment |
 
 ---
 

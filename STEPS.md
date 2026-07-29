@@ -68,19 +68,19 @@
 
 > These decisions are finalized based on the Trana Project Proposal.
 
-- [x] **Mobile framework:** Kotlin (Native Android for Patient App & Driver/Paramedic App)
-- [x] **Desktop application:** Python + HTML/CSS/JS UI (Hospital Command Dashboard & Admin)
-- [x] **Database & Real-time Backend:** Firebase Database (Realtime Database / Cloud Firestore + Firebase Auth)
-- [x] **Maps API:** Google Maps Platform (Android Maps SDK in Kotlin + JS Maps API in Python HTML UI)
-- [x] **Notifications:** Firebase Cloud Messaging (FCM) for push + SMS fallback
-- [x] **Cloud Hosting:** Firebase Cloud Services (Serverless realtime database, rules, and authentication)
-- [x] Document final decisions in `implementation.md` and `README.md`
+- [x] **Mobile framework:** Flutter (cross-platform — Android + iOS from one codebase)
+- [x] **Backend:** Node.js + Express (REST + WebSocket APIs)
+- [x] **Database:** PostgreSQL (structured data) + Redis (live location caching)
+- [x] **Maps API:** Google Maps Platform (Maps SDK, Directions API, Distance Matrix API, Geocoding API)
+- [x] **Notifications:** Firebase Cloud Messaging (FCM) for push + Twilio for SMS fallback
+- [x] **Cloud Hosting:** Railway / Render (backend + DB) + Vercel (hospital dashboard)
+- [ ] Document final decisions in a `TECH_STACK.md` file in the repo
 
 ### 0.4 Set Up Development Environment
-- [x] All team members install: Git, VS Code / PyCharm, Android Studio, Python 3.10+, Kotlin SDK
-- [x] Set up shared `firebase/` schema and config rules
-- [x] Create a shared API key management document (Notion / private Google Doc — **never commit keys to GitHub**)
-- [x] Add a `.gitignore` file covering all platforms (Python, Kotlin/Android, Firebase, environment files)
+- [ ] All team members install: Git, VS Code, Flutter SDK, Node.js (v18+)
+- [ ] Set up shared `.env.example` file listing all required environment variables
+- [ ] Create a shared API key management document (Notion / private Google Doc — **never commit keys to GitHub**)
+- [ ] Add a `.gitignore` file covering all platforms (Flutter, Node, environment files)
 
 ---
 
@@ -151,17 +151,16 @@
 
 ---
 
-## Phase 2 — Database & Real-time Foundation (Firebase)
+## Phase 2 — Backend Foundation
 
-> Configure the Firebase Realtime Database and Cloud Firestore that all three apps will communicate with.
+> Build the API server that all three apps will communicate with.
 
-### 2.1 Initialize Firebase Project Structure
-- [x] Create folder: `firebase/`
-- [x] Configure security & indexing rules in `firebase/database.rules.json`
-- [x] Define real-time data tree schema in `firebase/schema.json` (`/users`, `/ambulances`, `/dispatches`, `/hospitals`, `/checklists`)
-- [ ] Create a project in the Firebase Console and import `schema.json` as starter test data
-- [ ] Download `google-services.json` and place it in Kotlin Android app directories
-
+### 2.1 Initialize the Backend Project
+- [ ] Create folder: `trana-backend/`
+- [ ] `npm init -y` → install Express, dotenv, cors, helmet, morgan
+- [ ] Set up folder structure: `/routes`, `/controllers`, `/models`, `/middleware`, `/services`, `/utils`, `/config`
+- [ ] Implement health-check endpoint: `GET /api/health` → `{ status: "ok", timestamp: "..." }`
+- [ ] Verify health-check works locally with Postman
 
 ### 2.2 Define All API Routes (On Paper First!)
 
